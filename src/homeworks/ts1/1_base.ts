@@ -7,10 +7,10 @@ export const addPlus = (string: string): string => `+${string}`;
 
 export const removeFirstZeros = (value: string): string => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
 
-export const getBeautifulNumber = (value: string, separator: string = ' '): string =>
+export const getBeautifulNumber = (value: string, separator = ' '): string =>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
-export const round = (value: number, accuracy: number = 2): number => {
+export const round = (value: number, accuracy = 2): number => {
   const d = 10 ** accuracy;
   return Math.round(value * d) / d;
 };
@@ -30,13 +30,13 @@ export const getTransformFromCss = (transformCssString: string): {x: number, y: 
 export const getColorContrastValue = ([red, green, blue] : [number, number, number]): number =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
-
-export const getContrastType = (contrastValue: number): string => (contrastValue > 125 ? 'black' : 'white');
+type Contrast = 'black' || 'white'
+export const getContrastType = (contrastValue: number): Contrast => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string): void => {
+export const checkColor = (color: string): void || never  => {
   if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
 };
 
