@@ -1,5 +1,5 @@
 import React from 'react'
-import ModalWindow from '../components/ModalWindow'
+import ModalWindow from '../components/ModalWindow/ModalWindow'
 
 export default {
   title: 'Components/ModalWindow',
