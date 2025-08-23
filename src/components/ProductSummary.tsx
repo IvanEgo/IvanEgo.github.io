@@ -1,7 +1,14 @@
 import React from 'react';
 import ButtonCart from './ButtonCart';
 
-const ProductSummary = ({ price, imageUrl, title, description, }) => {
+interface ProductSummaryProps {
+  price: number;
+  imageUrl: string;
+  title: string;
+  description: string;
+}
+
+const ProductSummary = ({ price, imageUrl, title, description }: ProductSummaryProps) => {
 
   const truncatedDescription =
     description.length <= 25
@@ -20,7 +27,7 @@ const ProductSummary = ({ price, imageUrl, title, description, }) => {
       <p className="has-text-black">{title}</p>
       <p className="has-text-black"><b>Цена:</b> {price.toLocaleString()} ₽</p>
       <p className="has-text-black"><b>Описание:</b> {truncatedDescription}</p>
-      <ButtonCart disabled>В корзину</ButtonCart>
+      <ButtonCart disabled/>
     </div>
   );
 };

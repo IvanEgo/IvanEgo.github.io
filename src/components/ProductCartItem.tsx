@@ -1,6 +1,15 @@
 import React from 'react';
 
-function ProductCartItem({ id, title, price, quantity, imageUrl, removeProduct }) {
+interface ProductCartItemProps {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  imageUrl?: string;
+  removeProduct: (id: number) => void;
+}
+
+function ProductCartItem({ id, title, price, quantity, imageUrl, removeProduct }: ProductCartItemProps) {
   return (
     <div className="box has-background-light">
       {imageUrl && <img src={imageUrl} alt={title} />}

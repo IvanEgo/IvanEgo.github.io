@@ -1,7 +1,15 @@
 import React from 'react';
 import ButtonCart from './ButtonCart';
 
-const ProductDetails = ({ price, imageUrl, category, title, description, }) => {
+interface ProductDetailsProps {
+  price: number;
+  imageUrl: string;
+  category: string;
+  title: string;
+  description: string;
+}
+
+const ProductDetails = ({ price, imageUrl, category, title, description } : ProductDetailsProps) => {
 
   return (
     <div className="box has-background-light">
@@ -16,7 +24,7 @@ const ProductDetails = ({ price, imageUrl, category, title, description, }) => {
       <p className="has-text-black"><b>Категория:</b> {category}</p>
       <p className="has-text-black"><b>Цена:</b> {price.toLocaleString()} ₽</p>
       <p className="has-text-black"><b>Описание:</b> {description}</p>
-      <ButtonCart disabled>В корзину</ButtonCart>
+      <ButtonCart disabled/>
     </div>
   );
 };

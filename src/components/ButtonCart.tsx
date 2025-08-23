@@ -1,6 +1,11 @@
 import React from 'react';
 
-const ButtonCart = ({ counter = 0, disabled }) => {
+interface ButtonCartProps {
+  counter?: number;
+  disabled?: boolean;
+}
+
+const ButtonCart = ({ counter = 0, disabled }: ButtonCartProps) => {
   const handleIncrease = () => {
     console.log('Увеличить количество');
   };
