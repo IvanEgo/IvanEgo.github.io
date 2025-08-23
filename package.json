@@ -10,7 +10,8 @@
     "test": "jest src",
     "lint": "eslint src --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "npx gh-pages -d storybook-static"
   },
   "license": "MIT",
   "devDependencies": {
@@ -64,8 +65,10 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "bulma": "^1.0.4",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.18"
   }
 }
