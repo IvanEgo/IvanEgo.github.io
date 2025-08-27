@@ -5,7 +5,7 @@ import CloseButton from './CloseButton'
 
 interface ModalWindowProps {
   visible: boolean;           // Видимо ли модальное окно
-  onClose(): void;            // Callback для закрытия модального окна
+  onClose: () => void           // Callback для закрытия модального окна
   children: React.ReactNode;  // Содержимое модального окна
 }
 
