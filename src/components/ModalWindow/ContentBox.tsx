@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-const ContentBox = styled.div`
+// Определение типа для пропсов
+type ContentBoxProps = {
+  visible: boolean;
+};
+
+const ContentBox = styled.div<ContentBoxProps>`
   position: absolute;
   top: 50%;
   left: 50%;
