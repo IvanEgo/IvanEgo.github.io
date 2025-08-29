@@ -1,11 +1,6 @@
 import styled from 'styled-components'
 
-// Определение типа для пропсов
-type ContentBoxProps = {
-  visible: boolean;
-};
-
-const ContentBox = styled.div<ContentBoxProps>`
+const ContentBox = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -16,6 +11,5 @@ const ContentBox = styled.div<ContentBoxProps>`
   padding: 20px;
   min-width: 300px;
   max-width: 500px;
-  display: ${props => props.visible ? 'block' : 'none'};
 `
 export default ContentBox;
