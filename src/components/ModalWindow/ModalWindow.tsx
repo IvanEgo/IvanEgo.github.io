@@ -10,7 +10,7 @@ interface ModalWindowProps {
 }
 
 export default function ModalWindow({visible, onClose, children}: ModalWindowProps) {
-  //if (!visible) return null;
+  if (!visible) return null;
 
   return (
     !visible ? null :
