@@ -13,7 +13,6 @@ export default function ModalWindow({visible, onClose, children}: ModalWindowPro
   if (!visible) return null;
 
   return (
-    !visible ? null :
     <Mask>
       <ContentBox>
         <CloseButton type="button" onClick={() => onClose && onClose()}>✕</CloseButton>
